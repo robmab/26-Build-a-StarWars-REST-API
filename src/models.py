@@ -9,9 +9,10 @@ class Users(db.Model):
     __tablename__ = "users"
     id = db.Column(db.Integer, primary_key=True)
 
-    name = db.Column(db.String(10), nullable=False)
-    last_name = db.Column(db.String(10), nullable=False)
-    email = db.Column(db.String(20), unique=True, nullable=False)
+    user_name = db.Column(db.String(20), unique=True, nullable=False)
+    first_name = db.Column(db.String(20), nullable=False)
+    last_name = db.Column(db.String(20), nullable=False)
+    email = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(50), nullable=False)
 
     favourites_people = db.relationship("Favourites_people", backref="users", lazy=True)
@@ -28,7 +29,8 @@ class Users(db.Model):
     def serialize(self):
         return {
             "id": self.id,
-            "name": self.name,
+            "user_name": self.user_name,
+            "first_name": self.first_name,
             "last_name": self.last_name,
             "email": self.email,
             "password": self.password,
@@ -71,17 +73,17 @@ class Vehicles(db.Model):
     __tablename__ = "vehicles"
     id = db.Column(db.Integer, primary_key=True)
 
-    name = db.Column(db.String(20), unique=True, nullable=False)
-    model = db.Column(db.String(20), nullable=False)
-    vehicle_class = db.Column(db.String(20), nullable=False)
-    manufacturer = db.Column(db.String(20), nullable=False)
+    name = db.Column(db.String(50), unique=True, nullable=False)
+    model = db.Column(db.String(50), nullable=False)
+    vehicle_class = db.Column(db.String(50), nullable=False)
+    manufacturer = db.Column(db.String(50), nullable=False)
     cost_in_credits = db.Column(db.Integer, nullable=False)
     length = db.Column(db.Integer, nullable=False)
     crew = db.Column(db.Integer, nullable=False)
     passengers = db.Column(db.Integer, nullable=False)
     max_atmosphering_speed = db.Column(db.Integer, nullable=False)
     cargo_capacity = db.Column(db.Integer, nullable=False)
-    consumables = db.Column(db.String(20), nullable=False)
+    consumables = db.Column(db.String(30), nullable=False)
 
     favourites_vehicles = db.relationship(
         "Favourites_vehicles", backref="vehicles", lazy=True
@@ -111,11 +113,11 @@ class Planets(db.Model):
     __tablename__ = "planets"
     id = db.Column(db.Integer, primary_key=True)
 
-    name = db.Column(db.String(20), unique=True, nullable=False)
+    name = db.Column(db.String(50), unique=True, nullable=False)
     diameter = db.Column(db.Integer, nullable=False)
     rotation_period = db.Column(db.Integer, nullable=False)
     orbital_period = db.Column(db.Integer, nullable=False)
-    gravity = db.Column(db.String(20), nullable=False)
+    gravity = db.Column(db.String(30), nullable=False)
     population = db.Column(db.Integer, nullable=False)
     climate = db.Column(db.String(20), nullable=False)
     terrain = db.Column(db.String(20), nullable=False)
