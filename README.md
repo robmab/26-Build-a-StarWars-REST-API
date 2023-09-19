@@ -5,6 +5,13 @@
 ### Features
 
 BackEnd Endpoints divided into:
-- Usuario
-  - Visualizar usuarios creados, tanto todos o individualmente.
-  - Visualizar articulos favoritos de los usuarios.
+- User
+  - Display created users, either all or individually.
+  - Display users' favorite articles.
+- Vehicles, Planets and Characters
+  - Display (globally or individually), Edit, Delete, and Create.
+  - As for favorites management
+      - Creating, viewing and deleting favorites of a specific user
+
+>[!IMPORTANT]
+> All these Endpoints have error filters in case they do not exist or one of the fields to create or modify does not exist. In addition, there will be filters to recognize if the data type is valid. Other types of failures are also contemplated.
