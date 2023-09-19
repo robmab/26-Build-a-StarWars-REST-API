@@ -14,4 +14,4 @@ BackEnd Endpoints divided into:
       - Creating, viewing and deleting favorites of a specific user
 
 >[!IMPORTANT]
-> All these Endpoints have **error filters** in case they do not exist or one of the fields to create or modify does not exist. In addition, there will be filters to recognize if the data type is valid. Other types of failures are also contemplated.
+> All these Endpoints have **error filters** in case they do not exist or one of the fields to create or modify does not exist. In addition, there will be filters to recognize if the **data type** is valid. Other types of failures are also contemplated.
